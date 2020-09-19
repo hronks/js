@@ -2,18 +2,34 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 
+body {
+  padding: 1em;
+}
 
 h1 {
-  color: SeaGreen;
+  color: Green;
 }
 
 
-p,
-li {
+p, li {
   font-size: 18px;
 }
 
 
 a {
   text-decoration: none;
+}
+
+select {
+  position: absolute;
+  left: 0;
+  width: 7em;
+  margin-left: 10em;
+}
+
+input {
+  position: absolute;
+  left: 0;
+  width: 6.5em;
+  margin-left: 10em;
 }
