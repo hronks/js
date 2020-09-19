@@ -11,32 +11,43 @@
 <body>
   <h1>Select ANN parameters</h1>
 
-  <label for="IL_type">Input layer:</label>
-  <select name="IL_type" id="IL_type">
-    <option value="Standard">Standard</option>
-  </select><br><br>
+  <div id = first_inputs>
 
-  <label for="OL_type">Output layer:</label>
-  <select name="OL_type" id="OL_type">
-    <option value="Standard">Standard</option>
-  </select><br><br>
+    <label for="IL_type">Input layer:</label>
+    <select name="IL_type" id="IL_type">
+      <option value="Standard">Standard</option>
+    </select><br><br>
 
-  <label for="Inputs">Inputs:</label>
-  <input type="number" id="Inputs" name="Inputs" min="1" value = "10">
-  <br><br>
+    <label for="OL_type">Output layer:</label>
+    <select name="OL_type" id="OL_type">
+      <option value="Standard">Standard</option>
+    </select><br><br>
 
-  <label for="Outputs">Outputs:</label>
-  <input type="number" id="Outputs" name="Outputs" min="1" value = "1">
-  <br><br>
+    <label for="Inputs">Inputs:</label>
+    <input type="number" id="Inputs" name="Inputs" min="1" value = "10">
+    <br><br>
 
-  <label for="HL">Hidden layers:</label>
-  <input type="number" id="HL" name="HL" min="1" value = "3">
-  <br><br>
+    <label for="Outputs">Outputs:</label>
+    <input type="number" id="Outputs" name="Outputs" min="1" value = "1">
+    <br><br>
 
+    <label for="HL">Hidden layers:</label>
+    <input type="number" id="HL" name="HL" min="1" value = "3">
+    <br><br>
 
-  <button type="button" onclick="gen_HL_buttons()">Generate hidden layers</button>
+  </div>
 
+  <div id = hidden_layer_options>
+    <button type="button" onclick="gen_HL_buttons()">Generate hidden layers</button>
+    <br>
+  </div>
 
+  <div id = hidden_layer_selection>
+  </div>
+
+  <div id = hidden_layer_inputs>
+
+  </div>
 
 </body>
 </html>

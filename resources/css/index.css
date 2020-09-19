@@ -10,6 +10,21 @@ h1 {
   color: Green;
 }
 
+#first_inputs {
+  border:1px solid grey;
+}
+
+#hidden_layer_options {
+  border:1px solid grey;
+}
+
+#hidden_layer_selection {
+  border:1px solid grey;
+}
+
+#hidden_layer_inputs {
+  border:1px solid grey;
+}
 
 p, li {
   font-size: 18px;
