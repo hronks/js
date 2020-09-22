@@ -18,27 +18,30 @@ function gen_HL_buttons() {
       gen_HL_inputs(this.id);
     });
   }
-
-
 }
 
-function add_field(divID, title) {
+function add_field(divID, title, element, type) {
 
   var new_line1 = document.createElement("br");
   var new_line2 = document.createElement("br");
 
   document.getElementById(divID).append(title);
-  document.getElementById(divID).append(new_line1);
-  document.getElementById(divID).append(new_line2);
 
+  var field = document.createElement(element);
+  field.setAttribute('type', type);
+  field.id = "Hidden layer " + (1 + i) + "_type";
+  document.getElementById(divID).append(field);
+
+  document.getElementById(divID).append(new_line2);
+  document.getElementById(divID).append(new_line1);
 
 }
 
 function gen_HL_inputs(id) {
 
-  add_field("hidden_layer_inputs", "Type:");
-  add_field("hidden_layer_inputs", "Outputs:");
-  add_field("hidden_layer_inputs", "Function:");
+  add_field("hidden_layer_inputs", "Type:", "select", "text");
+  add_field("hidden_layer_inputs", "Outputs:", "input", "number");
+  add_field("hidden_layer_inputs", "Function:", "select", "text");
 
 //  alert("activated " + id);
 
