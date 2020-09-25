@@ -38,13 +38,13 @@ a {
 select {
   position: absolute;
   left: 0;
-  width: 7em;
-  margin-left: 10em;
+  width: 12em;
+  margin-left: 15em;
 }
 
 input {
   position: absolute;
   left: 0;
-  width: 6.5em;
-  margin-left: 10em;
+  width: 11.5em;
+  margin-left: 15em;
 }
