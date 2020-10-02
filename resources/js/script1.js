@@ -61,24 +61,71 @@ function create_button(divID, text, onclick, buttonID) {
 
 class ANN_parameters {
 
+  constructor() {
 
+    this.hidden_layers = 0;
+    this.hidden_layer_type = [];
+    this.hidden_layer_outputs = [];
+    this.activation_function = [];
+    this.output_string ="";
+  }
+
+  get_input_layer(input_type, inputs) {
+    this.input_type = input_type;
+    this.inputs = inputs;
+  }
+
+  get_output_layer(output_type, outputs, cost_function) {
+    this.output_type = output_type;
+    this.outputs = outputs;
+    this.cost_function = cost_function;
+  }
+
+  add_hidden_layer(hidden_layer_type, hidden_layer_outputs, activation_function) {
+    this.hidden_layers = this.hidden_layers + 1;
+    this.hidden_layer_type.push(hidden_layer_type);
+    this.hidden_layer_outputs.push(hidden_layer_outputs);
+    this.activation_function.push(activation_function);
+  }
+
+
+  write_output_string() {
+
+    var string_out;
+
+    this.output_string =  this.input_type + " " + this.inputs + " " + this.outputs + "\n" +
+                  this.hidden_layers + "\n";
+
+    for(var i = 0; i < this.hidden_layers; i++) {
+      this.output_string += this.hidden_layer_type[i] + " ";
+      this.output_string += this.hidden_layer_outputs[i] + " ";
+      this.output_string += this.activation_function[i] + "\n";
+    }
+
+    this.output_string += this.output_type + " " + this.cost_function;
+
+  }
 }
 
 /// specific functions
 
+param = new ANN_parameters;
+
 function gen_top_inputs() {
 
   add_sel_field("first_inputs", "Input layer:", "il_type");
-    add_field_option("il_type", "Standard");
+    add_field_option("il_type", "Network_input");
   add_num_field("first_inputs", "Inputs:", "10", "inputs");
   add_num_field("first_inputs", "Hidden Layers:", "3", "hidden_layers");
   add_sel_field("first_inputs", "Output layer:", "ol_type");
-    add_field_option("ol_type", "Standard");
+    add_field_option("ol_type", "Network_output");
   add_num_field("first_inputs", "Outputs:", "1", "outputs");
   add_sel_field("first_inputs", "Cost function:", "c_function");
-    add_field_option("c_function", "Binary Cross Entropy");
+    add_field_option("c_function", "Binary_crossentropy");
 
-  create_button("hidden_layer_options", "Generate Hidden Layer Options", gen_HL_buttons, "gen_HL_button")
+  create_button("hidden_layer_options", "Generate Hidden Layer Options", gen_HL_buttons, "gen_HL_button");
+  document.getElementById("hidden_layer_options").append(" ");
+  create_button("hidden_layer_options", "Save Parameters", "", "save_params");
   add_line_break("hidden_layer_options");
   add_line_break("hidden_layer_options");
 }
@@ -86,8 +133,14 @@ function gen_top_inputs() {
 function gen_HL_buttons() {
 
   document.getElementById("hidden_layer_selection").innerHTML = "";
-
   var n = document.getElementById("hidden_layers").value;
+
+  param.get_input_layer(il_type.value, inputs.value);
+  param.get_output_layer(ol_type.value, outputs.value, c_function.value);
+  param.hidden_layers = n;
+
+  param.write_output_string();
+  alert(param.output_string);
 
   for(i = 0; i < n; ++i) {
 
@@ -116,3 +169,7 @@ function gen_HL_inputs(id) {
   add_field_option("afunct_"+id, "ReLU");
   add_field_option("afunct_"+id, "Sigmoid");
 }
+
+param.add_hidden_layer("Dense", 32, "ReLU");
+param.add_hidden_layer("Dense", 32, "ReLU");
+param.add_hidden_layer("Dense", 1, "Sigmoid");
