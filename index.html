@@ -6,20 +6,23 @@
     <link href="./resources/css/format.css" type="text/css" rel="stylesheet">
   </head>
   <body>
-
     <div>
-      <h1>Artificial Neural Networks<hr></h1>
+      <h1>Artificial Neural Network<hr></h1>
     </div>
-
-    <div>
-
+    <div style = "position: absolute; top: 80px; float: left; width: 300px;">
+      <h3>Live configuration<hr style = "float: left; width: 270px;"></h3>
     </div>
-
-    <div style = "float: left; width: 300px;">
-      <h3>Live parameters<hr style = "float: left; width: 250px;"></h3>
-      <br><i>Network parameters<br><br></i>
-
+    <div style = "position: absolute; left: 330px;">
+      <button type="button">Data</button>
+      <button type="button">Run</button>
+    </div>
+    <div style = "position: absolute; float: left; top: 140px; width: 300px; height:500px; overflow-y: scroll; overflow-x: hidden;">
+      <div style = "margin-bottom: 0px;">
+        <i>Network parameters</i>
+      </div>
       <table style="width:300px; padding:5px">
+        <col style="width:50%">
+        <col style="width:50%">
         <tr>
           <td>Input type</td>
           <td><select style = "width: 88px;"></td>
@@ -46,16 +49,19 @@
         </tr>
       </table>
       <div style="width:100%; margin-left: 5px">
-        <button type="button">Save</button>
+        <button type="button">Reset layers</button>
       </div>
-      <br><i>Layer parameters<br><br></i>
+      <div style="margin-bottom: 5px; margin-top: 15px;">
+        <i>Layer parameters</i>
+      </div>
       <div style="width:100%; margin-left: 5px; margin-bottom: 5px">
         <button type="button">Layer 1</button>
         <button type="button">Layer 2</button>
         <button type="button">Layer 3</button>
       </div>
-
       <table style="width:300px; padding:5px">
+        <col style="width:50%">
+        <col style="width:50%">
         <tr>
           <td>Layer type</td>
           <td><select style = "width: 88px;"></td>
@@ -69,11 +75,35 @@
           <td><select style = "width: 88px;"></td>
         </tr>
       </table>
-    </div>
-
-    <div style = "position: fixed; left: 300px; width: 100%">
-      <button type="button">Data</button>
-      <button type="button">Run</button>
+      <div style="margin-bottom: 5px; margin-top: 5px;">
+        <i>Data</i>
+      </div>
+      <div style="margin-left: 5px; margin-bottom: 5px;">
+        Input data
+      </div>
+      <textarea rows = 10 style="width:230px; margin-left:5px; padding:5px; resize: none;">
+      </textarea>
+      <div style="margin-bottom: 5px; margin-top: 5px;">
+        <i>Training parameters</i>
+      </div>
+      <table style="width:300px; padding:5px">
+        <col style="width:50%">
+        <col style="width:50%">
+        <tr>
+          <td>Training proportion</td>
+          <td><input style = "width: 80px;"></td>
+        </tr>
+        <tr>
+          <td>Epochs</td>
+          <td><input style = "width: 80px;"></td>
+        </tr>
+        <tr>
+          <td>Learning rate</td>
+          <td><input style = "width: 80px;"></td>
+        </tr>
+      </table>
+      <hr style = "float: left; width: 250px;">
+      <button type="button" style = "margin-left: 55px">SET PARAMETERS</button>
     </div>
 
   </body>
