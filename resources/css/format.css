@@ -1,0 +1,28 @@
+
+body {
+  font-family: Courier;
+}
+
+#left_scroll {
+  position: fixed;
+  float: left;
+  top: 150px;
+  height: -webkit-calc(100% - 150px - 50px);
+  width: 350px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#left_scroll_button {
+  position: fixed;
+  float: left;
+  top: -webkit-calc(100% - 60px);
+  height: 50px;
+  width: 350px;
+}
+
+#analysis_box {
+  position: absolute;
+  left: 380px;
+  top: 150px;
+}
