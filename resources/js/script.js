@@ -31,10 +31,12 @@ window.onload = function () {
   layer_activation_function.options[layer_activation_function.options.length] =
     new Option('Sigmoid', 'Value1');
 
-  var link = document.createElement('a');
-  link.setAttribute('href', 'data:text/plain,Example');
-  link.setAttribute('download', './resources/data/housepricedata.csv');
-  input_data.innerHTML = link;
+    var client = new XMLHttpRequest();
+    client.open('GET', './resources/data/housepricedata.csv');
+    client.onreadystatechange = function() {
+      alert(client.responseText);
+    }
+    client.send();
 
 //  get_start_data.send();
 
