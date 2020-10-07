@@ -31,16 +31,11 @@ window.onload = function () {
   layer_activation_function.options[layer_activation_function.options.length] =
     new Option('Sigmoid', 'Value1');
 
-    var client = new XMLHttpRequest();
-    client.open('GET', './resources/data/housepricedata.csv');
-    client.onreadystatechange = function() {
-      alert(client.responseText);
-    }
-    client.send();
+  input_data.innerHTML = start_data;
 
-//  get_start_data.send();
-
-//  .open("./resources/data/housepricedata.csv", file, false);
+  training_proportion.value = 0.7;
+  epochs.value = 100;
+  learning_rate.value = 0.001;
 
 }
 

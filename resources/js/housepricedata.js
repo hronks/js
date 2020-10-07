@@ -1,4 +1,5 @@
-LotArea,OverallQual,OverallCond,TotalBsmtSF,FullBath,HalfBath,BedroomAbvGr,TotRmsAbvGrd,Fireplaces,GarageArea,AboveMedianPrice\n\
+var start_data =
+"LotArea,OverallQual,OverallCond,TotalBsmtSF,FullBath,HalfBath,BedroomAbvGr,TotRmsAbvGrd,Fireplaces,GarageArea,AboveMedianPrice\n\
 8450,7,5,856,2,1,3,8,0,548,1\n\
 9600,6,8,1262,2,0,3,6,1,460,1\n\
 11250,7,5,920,2,1,3,6,1,608,1\n\
@@ -1458,4 +1459,4 @@ LotArea,OverallQual,OverallCond,TotalBsmtSF,FullBath,HalfBath,BedroomAbvGr,TotRm
 13175,6,6,1542,2,0,3,7,2,500,1\n\
 9042,7,9,1152,2,0,4,9,2,252,1\n\
 9717,5,6,1078,1,0,2,5,0,240,0\n\
-9937,5,6,1256,1,1,3,6,0,276,0\n\
+9937,5,6,1256,1,1,3,6,0,276,0\n";
