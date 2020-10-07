@@ -21,7 +21,7 @@ body {
   width: 350px;
 }
 
-#analysis_box {
+.analysis_box {
   position: absolute;
   left: 380px;
   top: 150px;

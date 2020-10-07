@@ -53,24 +53,36 @@
         <i>Layer parameters</i>
       </div>
       <div style="width:100%; margin-left: 5px; margin-bottom: 5px">
-        <button type="button">Layer 1</button>
-        <button type="button">Layer 2</button>
-        <button type="button">Layer 3</button>
+        <button id ="layer_selector_0" onclick="click_layer_button(this)" type="button">Layer 1</button>
+        <button id ="layer_selector_1" onclick="click_layer_button(this)" type="button">Layer 2</button>
+        <button id ="layer_selector_2" onclick="click_layer_button(this)" type="button">Layer 3</button>
       </div>
       <table style="width:350px; padding:5px">
         <col style="width:60%">
         <col style="width:40%">
         <tr>
           <td>Layer type</td>
-          <td><select id = 'layer_type' style = "width: 88px;"></td>
+          <td>
+            <select id = 'layer_type_0' style = "width: 88px; display: block;"></select>
+            <select id = 'layer_type_1' style = "width: 88px; display: none;"></select>
+            <select id = 'layer_type_2' style = "width: 88px; display: none;"></select>
+          </td>
         </tr>
         <tr>
           <td>Layer outputs</td>
-          <td><input id = 'layer_outputs' style = "width: 80px;"></td>
+          <td>
+            <input id = 'layer_outputs_0' style = "width: 80px; display: block;"></select>
+            <input id = 'layer_outputs_1' style = "width: 80px; display: none;"></select>
+            <input id = 'layer_outputs_2' style = "width: 80px; display: none;"></select>
+          </td>
         </tr>
         <tr>
           <td>Activation function</td>
-          <td><select id = 'layer_activation_function' style = "width: 88px;"></td>
+          <td>
+            <select id = 'layer_activation_function_0' style = "width: 88px; display: block;"></select>
+            <select id = 'layer_activation_function_1' style = "width: 88px; display: none;"></select>
+            <select id = 'layer_activation_function_2' style = "width: 88px; display: none;"></select>
+          </td>
         </tr>
       </table>
       <div style="margin-bottom: 5px; margin-top: 5px;">
@@ -106,11 +118,28 @@
       <button type="button" style = "margin-left: 78px"><b>Set Configuration</b></button>
     </div>
     <div style = "position: absolute; left: 380px;">
-      <button type="button">Configuration</button>
-      <button type="button">Training run</button>
+      <button id = "configuration_button" type="button" onclick="show_analysis_box(this, 'configuration_box')" style="outline: solid black")>Configuration</button>
+      <button id = "training_run_button" type="button" onclick="show_analysis_box(this, 'training_run_box')">Training run</button>
     </div>
-    <div id = "analysis_box">
-      [analyis goes here]
+
+    <div class = "analysis_box" id = "configuration_box">
+      <i>Network Signature</i>
+      <br>
+      <textarea id = "live_config_signature_textarea" style="padding: 5px; width: 400px; height: 200px;"> </textarea>
+      <br><br>
+      <i>Input Data</i>
+      <br>
+      <textarea id = "live_config_data_textarea" style="padding: 5px; width: 400px; height: 200px;"> </textarea>
+
     </div>
+
+    <div class = "analysis_box" id = "training_run_box" style ="display: none;">
+      [training run]
+    </div>
+
+    <div class = "analysis_box" id = "something_else_box" style ="display: none;">
+      [something else]
+    </div>
+
   </body>
 </html>
